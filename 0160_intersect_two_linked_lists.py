@@ -8,7 +8,7 @@
 
 class Solution:
     def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[ListNode]:
-
+        
         intersect_val = None
         intersected = False
 
@@ -28,15 +28,14 @@ class Solution:
                 headB = headB.next
                 tmpB = tmpB.next
 
-        if headA.val == headB.val:
+        if headA == headB:
             intersect_val = headA
             intersected = True
 
         while headA.next:
             headA = headA.next
             headB = headB.next
-
-            if headA.val != headB.val:
+            if headA != headB:
                 intersected = False
                 intersect_val = None
             elif not intersected:
